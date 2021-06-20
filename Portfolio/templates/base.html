@@ -1,0 +1,86 @@
+{% load static %}
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+{% include 'head.html' %}
+
+<body>
+    <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+
+    <!-- header-start -->
+    <header>
+        {% include 'navbar.html' %}
+    </header>
+    {% block slider_area %}
+    <!-- slider_area_start -->
+    <!-- slider_area_end -->
+    {% endblock slider_area %}
+
+    {% block context %}
+    <!-- context_start -->
+    <!-- context_end -->
+    {% endblock context %}
+
+
+
+    {% block download_area %}{% endblock download_area %}
+
+    {% block service_area %}
+    <!-- service_area start  -->
+    <!-- service_area end  -->
+    {% endblock service_area %}
+
+    {% block gallery_area %}
+    <!-- gallery_area start  -->
+    <!-- gallery_area end  -->
+    {% endblock gallery_area %}
+
+    {% block testimonial_area %}
+    <!-- testimonial_area  -->
+    <!-- /testimonial_area  -->
+    {% endblock testimonial_area %}
+
+    <!--/ footer start  -->
+    {% include 'footer.html' %}
+    <!--/ footer end  -->
+
+    {% block scripts %}
+    <!-- link that opens popup -->
+    <script src=" https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"> </script>
+    <!-- JS here -->
+    <script src="{% static 'js/vendor/modernizr-3.5.0.min.js' %}"></script>
+    <script src="{% static 'js/vendor/jquery-1.12.4.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'js/ajax-form.js' %}"></script>
+    <script src="{% static 'js/waypoints.min.js' %}"></script>
+    <script src="{% static 'js/jquery.counterup.min.js' %}"></script>
+    <script src="{% static 'js/imagesloaded.pkgd.min.js' %}"></script>
+    <script src="{% static 'js/scrollIt.js' %}"></script>
+    <script src="{% static 'js/jquery.scrollUp.min.js' %}"></script>
+    <script src="{% static 'js/wow.min.js' %}"></script>
+    <script src="{% static 'js/nice-select.min.js' %}"></script>
+    <script src="{% static 'js/jquery.slicknav.min.js' %}"></script>
+    <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'js/plugins.js' %}"></script>
+    <!-- <script src="js/gijgo.min.js"></script> -->
+    <script src="{% static 'js/slick.min.js' %}"></script>
+
+
+
+    <!--contact js-->
+    <script src="{% static 'js/contact.js' %}"></script>
+    <script src="{% static 'js/jquery.ajaxchimp.min.js' %}"></script>
+    <script src="{% static 'js/jquery.form.js' %}"></script>
+    <script src="{% static 'js/jquery.validate.min.js' %}"></script>
+    <script src="{% static 'js/mail-script.js' %}"></script>
+
+    <script src="{% static 'js/main.js' %}"></script>
+    {% endblock scripts %}
+</body>
+
+</html>

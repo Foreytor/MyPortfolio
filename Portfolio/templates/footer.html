@@ -1,0 +1,58 @@
+{% load static %}
+<footer class="footer">
+    <div class="footer_top">
+        {% for obj in сontent_footer %}
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="lets_talk">
+                        <h3>{{ obj.nameOne }} <a href="#">{{ obj.nameTwo }}</a> </h3>
+                        <p>{{ obj.content }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="single_links d-flex justify-content-between align-items-center">
+                        <span>{{ obj.nameLinkOne }}</span>
+                        <a href="{{ obj.LinkOne }}"> <i class="fa {{ obj.incLinkOne|lower }}"></i> </a>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="single_links d-flex justify-content-between align-items-center">
+                        <span>{{ obj.nameLinkTwo }}</span>
+                        <a href="{{ obj.LinkTwo }}"> <i class="fa {{ obj.incLinkTwo|lower }}"></i> </a>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="single_links d-flex justify-content-between align-items-center">
+                        <span>{{ obj.nameLinkThree }}</span>
+                        <a href="{{ obj.LinkThree }}"> <i class="fa {{ obj.incLinkThree|lower }}"></i> </a>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="single_links d-flex justify-content-between align-items-center">
+                        <span>{{ obj.nameLinkFour }}</span>
+                        <a href="{{ obj.LinkFour }}"> <i class="fa {{ obj.incLinkFour|lower }}"></i> </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="copy-right_text">
+        <div class="container">
+            <div class="footer_border"></div>
+            <div class="row">
+                <div class="col-xl-12">
+                    <p class="copy_right text-center">
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!--/ footer end  -->

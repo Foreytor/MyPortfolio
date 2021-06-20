@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% load static %}
+        {% block context %}
+        <div class="gallery_area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="section_title mb-50">
+                            <h3>My Works</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-xl-10 col-lg-10">
+                        <div class="row">
+                            
+                            
+                                {% for obj in works %}
+        
+                                {% if forloop.counter|divisibleby:"2" %}
+                                <div class="col-xl-6 col-lg-6 col-md-6">
+                                <div class="single_gallery">
+                                    <div class="thumb">
+                                        {% if obj.preview %}
+                                        <img src="{{ obj.preview.url }}" alt="">
+                                        {% endif %}
+                                    </div>
+                                    <div class="gallery_heading">
+                                        <span>{{ obj.theme }}</span>
+                                        <a href="{{ obj.get_absolute_url }}"><h4>{{ obj.name }}</h4></a>
+                                    </div>
+                                </div>
+                                </div>
+                                {% else %}
+                                <div class="col-xl-6 col-lg-6 col-md-6">
+                                    <div class="single_gallery">
+                                        <div class="thumb">
+                                            {% if obj.preview %}
+                                            <img src="{{ obj.preview.url }}" alt="">
+                                            {% endif %}
+                                        </div>
+                                        <div class="gallery_heading">
+                                            <span>{{ obj.theme }}</span>
+                                            <a href="{{ obj.get_absolute_url }}" ><h4>{{ obj.name }}</h4></a>
+                                        </div>
+                                    </div>
+                                    </div>
+                                {% endif %}
+                                {% endfor %}
+                            
+                            
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                        <a class="boxed-btn3-line" href="#"><</a>
+                                        <a class="boxed-btn3-line boxed-btn3-line-active" href="#">sfg</a>
+                                        <a class="boxed-btn3-line" href="#">></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endblock context %}    

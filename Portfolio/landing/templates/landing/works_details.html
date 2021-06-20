@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block context %}
+    <!-- header-end -->
+    <!-- bradcam_area  -->
+    <div class="bradcam_area bradcam_area2 bradcam_bg_1">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="bradcam_text text-center">
+                        <h3>{{ work_item.name }}</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/ bradcam_area  -->
+
+    <div class="projects_details_area">
+        <div class="container pos_up">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="banner_img">
+                        {% if work_item.preview %}
+                        <img src="{{ work_item.preview.url }}" alt="">
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            <div class="details_info">
+                <div class="row justify-content-center">
+                    <div class="col-xl-6 col-md-8 ">
+                        <div class="single_details">
+                            {% autoescape off %}
+                            {{ work_item.content }}
+                            {% endautoescape %}
+                        </div>
+                        <div class="button_link">
+                            <a href="{{ work_item.buttonName }}" class="boxed-btn3-line">{{ work_item.buttonName }}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock context %}   

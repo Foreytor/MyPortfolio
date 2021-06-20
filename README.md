@@ -1,0 +1,1 @@
+This is not a large affiliate site based on the JONY template. The backend part is written in django 3

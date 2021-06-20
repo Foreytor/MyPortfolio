@@ -1,0 +1,205 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block slider_area %}
+    <!-- slider_area_start -->
+    <div class="slider_area">
+        <div class="single_slider  d-flex align-items-center slider_bg_1">
+            <div class="container">
+                <div class="row align-items-center position-relative">
+                    <div class="col-lg-9">
+                        <div class="slider_text">
+                                {% for obj in header_home %}<h3>
+                                    {{ obj.greeting }}<br>
+                                    <span>{{ obj.position }}</span></h3>
+                                {% endfor %}
+                        <a class="boxed-btn3-line" href="#">View Works</a>
+                        </div>
+                    </div>
+                    <div class="my_img d-none d-lg-block">
+                        <img src="{% static 'img/about/my_img.png' %}" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock slider_area %}
+
+{% block download_area %}
+{% for obj in contens_bar %} 
+<div class="download_area">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-10">
+                <div class="download_text">
+                    <h3>{{ obj.name }}</h3>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 col-md-6">
+                <div class="download_left">
+                    <p>{{ obj.content }}
+                    </p>
+                    <a href="{{ obj.buttonLink }}" class="boxed-btn3-line">{{ obj.buttonName }}</a>
+                </div>
+            </div>
+            <div class="col-lg-5 offset-lg-1 col-md-6">
+                <div class="progress_skills">
+                    <div class="single_progress">
+                        <div class="label d-flex justify-content-between">
+                            <span>{{ obj.barOneText }}</span>
+                            <span>{{ obj.barOneProcent }} %</span>
+                        </div>
+                            <div class="progress">
+                                    <div class="progress-bar " role="progressbar" style="width: 90%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                  </div>
+                    </div>
+                    <div class="single_progress">
+                            <div class="label d-flex justify-content-between">
+                                    <span>{{ obj.barTwoText }}</span>
+                                    <span>{{ obj.barTwoProcent }} %</span>
+                                </div>
+                            <div class="progress">
+                                    <div class="progress-bar " role="progressbar" style="width: 70%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                  </div>
+                    </div>
+                    <div class="single_progress">
+                            <div class="label d-flex justify-content-between">
+                                    <span>{{ obj.barFhreeText }}</span>
+                                    <span>{{ obj.barFhreeProcent }} %</span>
+                                </div>
+                            <div class="progress">
+                                    <div class="progress-bar" role="progressbar" style="width: 45%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                  </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}
+{% endblock download_area %}
+
+{% block service_area %}
+<!-- service_area end  -->
+{% for obj in content_services %} 
+<div class="service_area">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="section_title mb-50">
+                    <h3>My Services</h3>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-6">
+                <div class="single_service text-center">
+                    <div class="icon">
+                        <img src="{% static 'img/svg_icon/1.svg' %}" alt="">
+                    </div>
+                    <h3>
+                            {{ obj.nameOne }}
+                    </h3>
+                    <p>{{ obj.contentOne }}</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="single_service text-center">
+                    <div class="icon">
+                        <img src="{% static 'img/svg_icon/2.svg' %}" alt="">
+                    </div>
+                    <h3>
+                            {{ obj.nameTwo }}
+                    </h3>
+                    <p>{{ obj.contentTwo }}</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="single_service text-center">
+                    <div class="icon">
+                        <img src="{% static 'img/svg_icon/3.svg' %}" alt="">
+                    </div>
+                    <h3>
+                            {{ obj.nameThree }}
+                    </h3>
+                    <p>{{ obj.contentThree }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}
+<!-- gallery_area start  -->
+{% endblock service_area %}
+
+{% block gallery_area %}
+<!-- gallery_area start  -->
+<div class="gallery_area">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="section_title mb-50">
+                    <h3>My Works</h3>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-xl-10 col-lg-10">
+                <div class="row">
+                    
+                    
+                        {% for obj in content_works %}
+
+                        {% if forloop.counter|divisibleby:"2" %}
+                        <div class="col-xl-6 col-lg-6 col-md-6">
+                        <div class="single_gallery">
+                            <div class="thumb">
+                                {% if obj.preview %}
+                                <img src="{{ obj.preview.url }}" alt="">
+                                {% endif %}
+                            </div>
+                            <div class="gallery_heading">
+                                <span>{{ obj.theme }}</span>
+                                <a href="{{ obj.get_absolute_url }}"><h4>{{ obj.name }}</h4></a>
+                            </div>
+                        </div>
+                        </div>
+                        {% else %}
+                        <div class="col-xl-6 col-lg-6 col-md-6">
+                            <div class="single_gallery">
+                                <div class="thumb">
+                                    {% if obj.preview %}
+                                    <img src="{{ obj.preview.url }}" alt="">
+                                    {% endif %}
+                                </div>
+                                <div class="gallery_heading">
+                                    <span>{{ obj.theme }}</span>
+                                    <a href="{{ obj.get_absolute_url }}" ><h4>{{ obj.name }}</h4></a>
+                                </div>
+                            </div>
+                            </div>
+                        {% endif %}
+                        {% endfor %}
+                    
+                    
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="more_works">
+                                <a class="boxed-btn3-line" href="#">ЕЩЕ!!!!!</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- gallery_area end  -->
+{% endblock gallery_area %}
+
+{% block testimonial_area %}
+<!-- testimonial_area  -->
+{% include 'testimonial_area.html' %}
+<!-- /testimonial_area  -->
+{% endblock testimonial_area %}

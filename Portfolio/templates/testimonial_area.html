@@ -1,0 +1,43 @@
+{% load static %}
+<!-- testimonial_area  -->
+<div class="testimonial_area ">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="section_title">
+                    {% for obj in setting_sidebar %}
+                    <h3>{{ obj.name }}</h3>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="testmonial_active owl-carousel">
+                    {% for obj in сontent_sidebar %}
+                    <div class="сontent_sidebar">
+                        <div class="row">
+                            <div class="col-xl-9 col-md-9">
+                                <div class="single_testmonial">
+                                    <p>{{ obj.content }}
+                                    </p>
+                                    <div class="testmonial_author">
+                                        <div class="thumb">
+                                            <img src="{{ obj.photo.url }}" alt="{{ obj.name }}">
+                                        </div>
+                                        <div class="author_name">
+                                            <h3>{{ obj.name }}</h3>
+                                            <span>{{ obj.position }}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /testimonial_area  -->
